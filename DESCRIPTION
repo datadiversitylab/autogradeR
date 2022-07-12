@@ -1,0 +1,16 @@
+Package: gradeR
+Title: A Basic Auto-Grader for Assignments in R
+Version: 0.0.0.9000
+Authors@R: 
+    person("Cristian", "Roman Palacios", , "cromanpa94@arizona.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Designed to autograde assignments in R, gradeR designs an environment
+            that can be used by instructors to grade a large number of assignments.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+LazyData: true
+imports:
+  here,
+  usethis
