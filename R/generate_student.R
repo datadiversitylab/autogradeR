@@ -3,6 +3,8 @@
 #' This function takes a pre-defined HW template and generates a full
 #' homework with an autograding system
 #' 
+#' @importFrom rmarkdown render
+#' 
 #' @export
 
 generate_student <- function(){

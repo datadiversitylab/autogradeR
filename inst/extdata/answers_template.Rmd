@@ -6,7 +6,6 @@ title: 'Sample HW for gradeR'
 
 ```{r Basic packages}
 library(digest)
-library(here)
 library(gradeR)
 library(rmarkdown)
 ```

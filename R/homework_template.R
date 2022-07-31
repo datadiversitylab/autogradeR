@@ -4,6 +4,8 @@
 #' 
 #' @param path Where should the sample directory be exported to? 
 #' 
+#' @importFrom rmarkdown render
+#' 
 #' @export
 #' 
 
@@ -14,8 +16,7 @@ dir.create('tests')
 dir.create('data')
 
 #Export sample dataset to data
-sample_dataset <- data.frame(A = rnorm(5), b = rnorm(5))
-write.csv(sample_dataset, "./data/sample_dataset.csv")
+file.copy(system.file("extdata", "sample_dataset.csv", package = "gradeR"), "./data/sample_dataset.csv")
 
 #Generate answer template and readme files
 file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), "./tests/1_answers_template.Rmd")
