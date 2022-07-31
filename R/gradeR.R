@@ -17,9 +17,16 @@
       cat('\u2753', "Question", names(reference_answers)[x], "- Incomplete\n")
       return(0)
     }else{
+      
       st_answer <- reference_answers[[x]][[2]](student_answers[[x]])
       ref_answer <- reference_answers[[x]][[1]]
-      answered <- all(ref_answer == st_answer)
+      
+      answered <- if (is.character(student_answers[[x]])) {
+       !st_answer
+      }else{
+        all(st_answer == ref_answer)
+      }
+      
       if (answered) {
         cat('\u2705', "Question", names(reference_answers)[x], "- Correct!\n")
         return(1)
