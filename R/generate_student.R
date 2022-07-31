@@ -34,12 +34,19 @@ generate_student <- function(){
   instructor_copy <- instructor_copy[-c(toDel3, toDel4)]
   
   ##Add reference answers line
-  AddDs <- "load('tests/reference_answers.RData'); save.image('tests/reference_answers.RData')"
-  AddDs2 <- "rmarkdown::render('README.Rmd', quiet = T)"
+  AddDs <- "load('tests/reference_answers.RData')"
   toIns <- which(instructor_copy == "```{r gradeR}")
   toRet <- which(instructor_copy == "rm(list = ls())")
-  instructor_copy <- c(instructor_copy[c(1:toIns)], AddDs, AddDs2, instructor_copy[c((toIns+1):length(instructor_copy))]) 
+  instructor_copy <- c(instructor_copy[c(1:toIns)], AddDs, instructor_copy[c((toIns+1):length(instructor_copy))]) 
+  
+  AddDs2 <- c("", "```{r render README}", 
+              "save.image('tests/reference_answers.RData')",
+              "rmarkdown::render('README.Rmd', quiet = T)",
+              "```")
+  
+  instructor_copy <- c(instructor_copy, AddDs2)
   writeLines(instructor_copy, "0_Homework.Rmd")
+  
   
   ## Edit readme
   
