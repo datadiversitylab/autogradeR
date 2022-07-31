@@ -4,6 +4,7 @@
 #' homework with an autograding system
 #' 
 #' @importFrom rmarkdown render
+#' @importFrom digest digest
 #' 
 #' @export
 

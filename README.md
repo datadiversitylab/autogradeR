@@ -1,9 +1,20 @@
 # gradeR
+## A package to simplify basic grading taks in `R`
 
-## A basic autograding system for assignments in `R`
+`gradeR` is expected to help instructors grade pre-defined assignments using a particular and relatively simple set of functions.
 
+-------------
 
-### The project in brief
+## Installing `gradeR`
+
+The `gradeR` R package can be installed from GitHub using the code presented below. I expect `gradeR` to be available on CRAN at some point in the future.
+
+```
+library(devtools)
+install_github("cromanpa94/gradeR")
+```
+
+#### Next steps
 
 - [x] Function to create the sample repo
 

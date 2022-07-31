@@ -1,6 +1,6 @@
 Package: gradeR
 Title: A Basic Auto-Grader for Assignments in R
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person("Cristian", "Roman Palacios", , "cromanpa94@arizona.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
@@ -11,7 +11,11 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 LazyData: true
 imports:
-  digest
 Depends: 
     R (>= 2.10), 
-    rmarkdown
+    rmarkdown,
+    digest
+URL: https://cromanpa94.github.io/gradeR/
+Suggests: 
+    knitr
+VignetteBuilder: knitr

@@ -3,4 +3,5 @@
 export(.gradeR)
 export(generate_student)
 export(homework_template)
+importFrom(digest,digest)
 importFrom(rmarkdown,render)

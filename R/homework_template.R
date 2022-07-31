@@ -19,6 +19,7 @@ dir.create('data')
 file.copy(system.file("extdata", "sample_dataset.csv", package = "gradeR"), "./data/sample_dataset.csv")
 
 #Generate answer template and readme files
+file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), "./tests/0_answers_template_original.Rmd")
 file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), "./tests/1_answers_template.Rmd")
 file.copy(system.file("extdata", "README.Rmd", package = "gradeR"), "README.Rmd")
 

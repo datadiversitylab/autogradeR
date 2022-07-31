@@ -48,13 +48,14 @@ Q4 = "Test answer" #Replace with NULL
 
 # Autograder
 
+**Do NOT modify this section.** 
 
 ```{r Autograder}
 .reference_answers <- list(
           Q1 = list(digest(Q1, algo = 'sha1'), fun = function(x){digest(x, algo = 'sha1')}), # Question 1
           Q2 = list(length(Q2), fun = function(x){length(x)}),                               # Question 2
           Q3 = list(dim(Q3), fun = function(x){dim(x)}),                                     # Question 3
-          Q4 = list(Q4, fun = function(x){is.null(x)})                                       # Question 4
+          Q4 = list(Q4, fun = function(x){!is.null(x)})                                      # Question 4
 )
 rm(list = ls())
 save.image('reference_answers.RData')

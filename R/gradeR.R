@@ -22,7 +22,7 @@
       ref_answer <- reference_answers[[x]][[1]]
       
       answered <- if (is.character(student_answers[[x]])) {
-       !st_answer
+       st_answer
       }else{
         all(st_answer == ref_answer)
       }
