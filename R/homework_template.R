@@ -17,8 +17,9 @@ dir.create('data')
 sample_dataset <- data.frame(A = rnorm(5), b = rnorm(5))
 write.csv(sample_dataset, "./data/sample_dataset.csv")
 
-#Generate answer template files
+#Generate answer template and readme files
 file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), "./tests/1_answers_template.Rmd")
+file.copy(system.file("extdata", "README.Rmd", package = "gradeR"), "README.Rmd")
 
 ## Render answers_template.Rmd
 rmarkdown::render("./tests/1_answers_template.Rmd")

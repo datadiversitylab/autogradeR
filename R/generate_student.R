@@ -25,12 +25,31 @@ generate_student <- function(){
   toDel2 <- which(instructor_copy ==  "```{r gradeR}"  )-1
   instructor_copy <- instructor_copy[-c(toDel1:toDel2)]
   
+  ##Remove traces of the testing autograder
+  toDel3 <- which(instructor_copy ==  "rm(list = ls())" )
+  toDel4 <- which(instructor_copy ==  "save.image('reference_answers.RData')")
+  instructor_copy <- instructor_copy[-c(toDel3, toDel4)]
+  
   ##Add reference answers line
-  AddDs <- "load('tests/reference_answers.RData')"
+  AddDs <- "load('tests/reference_answers.RData'); save.image('tests/reference_answers.RData')"
+  AddDs2 <- "rmarkdown::render('README.Rmd', quiet = T)"
   toIns <- which(instructor_copy == "```{r gradeR}")
-  instructor_copy <- c(instructor_copy[c(1:toIns)], AddDs, instructor_copy[c((toIns+1):length(instructor_copy))]) 
-  
+  toRet <- which(instructor_copy == "rm(list = ls())")
+  instructor_copy <- c(instructor_copy[c(1:toIns)], AddDs, AddDs2, instructor_copy[c((toIns+1):length(instructor_copy))]) 
   writeLines(instructor_copy, "0_Homework.Rmd")
-  rmarkdown::render("0_Homework.Rmd")
   
+  ## Edit readme
+  
+  readme <- readLines("README.Rmd")
+  
+  readme <- c(readme, c("```{r}" ,                                                                         
+    "load('tests/reference_answers.RData')"  ,   
+    ".gradeR(student_answers = student_answers_test, reference_answers = .reference_answers)",
+    "```" ,""))
+  
+  writeLines(readme, "README.Rmd")
+  
+  #Render HW and README
+  rmarkdown::render("0_Homework.Rmd")
+
 }

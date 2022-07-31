@@ -8,6 +8,7 @@ title: 'Sample HW for gradeR'
 library(digest)
 library(here)
 library(gradeR)
+library(rmarkdown)
 ```
 
 # Question 1
