@@ -9,26 +9,24 @@
 #' @export
 #' 
 
-homework_template <- function(path){
+homework_template <- function(path = "."){
 
 #Create basic directories
 dir.create('tests')
 dir.create('data')
 
 #Export sample dataset to data
-file.copy(system.file("extdata", "sample_dataset.csv", package = "gradeR"), "./data/sample_dataset.csv")
+file.copy(system.file("extdata", "sample_dataset.csv", package = "gradeR"), file.path(path, "data/sample_dataset.csv"))
 
 #Generate answer template and readme files
-file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), "./tests/0_answers_template_original.Rmd")
-file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), "./tests/1_answers_template.Rmd")
-file.copy(system.file("extdata", "README.Rmd", package = "gradeR"), "README.Rmd")
+file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), file.path(path, "tests/0_answers_template_original.Rmd"))
+file.copy(system.file("extdata", "answers_template.Rmd", package = "gradeR"), file.path(path, "tests/1_answers_template.Rmd"))
+file.copy(system.file("extdata", "README.Rmd", package = "gradeR"), file.path(path, "README.Rmd"))
 
 ## Render answers_template.Rmd
-rmarkdown::render("./tests/1_answers_template.Rmd")
-## Keep only the workspace and Rmd
-unlink("./tests/1_answers_template_modify.html")
+rmarkdown::render(file.path(path,"tests/1_answers_template.Rmd"), envir = new.env())
 ## Create a full version of the Rmd with the autograder
-mdFile <- readLines("./tests/1_answers_template.Rmd")
+mdFile <- readLines(file.path(path,"tests/1_answers_template.Rmd"))
 ##Remove the rm(list = ls()) line
 mdFile <- mdFile[-grep("rm(list = ls())", mdFile, fixed = TRUE)]
 ##Add basic autograder
@@ -41,8 +39,8 @@ autg <- c("",
           "```",
           "")
 mdFile <- c(mdFile, autg)
-writeLines(mdFile, "./tests/1_answers_template.Rmd")
-rmarkdown::render("./tests/1_answers_template.Rmd")
+writeLines(mdFile, file.path(path,"tests/1_answers_template.Rmd"))
+rmarkdown::render(file.path(path,"tests/1_answers_template.Rmd"), envir = new.env())
 Sys.sleep(1)
 
 }

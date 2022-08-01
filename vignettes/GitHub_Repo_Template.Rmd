@@ -45,6 +45,7 @@ generate_student()
 ```
 
 
+
 # 4. Release the HW
 
 Create a template repo in GitHub. Use GitHub classroom. Push only the relevant files (do NOT push the answers). I will talk more about how to encrypt R files later on.
@@ -53,6 +54,15 @@ Create a template repo in GitHub. Use GitHub classroom. Push only the relevant f
 # 5. After the HW is due
 
 Clone the repositories using GitHub Classroom assistant.
+
+```{r}
+unlink(c('0_Homework.html',
+'0_Homework.Rmd',
+'data',
+'README.md',
+'README.Rmd',
+'tests'), recursive = TRUE)
+```
 
 
 
