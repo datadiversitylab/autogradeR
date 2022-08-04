@@ -22,7 +22,7 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">gradeR</a>
 
@@ -108,9 +108,9 @@
 <span>  Q3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">Q3</span><span class="op">)</span>, fun <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">}</span><span class="op">)</span>,                                     <span class="co"># Question 3</span></span>
 <span>  Q4 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">Q4</span>, fun <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html" class="external-link">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">}</span><span class="op">)</span>                                      <span class="co"># Question 4</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p>Let’s now grade the submissions:</p>
+<p>Let’s now grade the submissions using <code>gradeR</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/dot-gradeR.html">.gradeR</a></span><span class="op">(</span>student_answers <span class="op">=</span> <span class="va">student_answers_no_answers</span>, reference_answers <span class="op">=</span> <span class="va">.reference_answers</span>, maximum_grade<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/gradeR.html">gradeR</a></span><span class="op">(</span>student_answers <span class="op">=</span> <span class="va">student_answers_no_answers</span>, reference_answers <span class="op">=</span> <span class="va">.reference_answers</span>, maximum_grade<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ❓ Question Q1 - Incomplete</span></span>
 <span><span class="co">#&gt; ❓ Question Q2 - Incomplete</span></span>
 <span><span class="co">#&gt; ❓ Question Q3 - Incomplete</span></span>
@@ -118,7 +118,7 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    ⌛ Auto-grade 0 %,  0 / 10 points</span></span>
-<span><span class="fu"><a href="../reference/dot-gradeR.html">.gradeR</a></span><span class="op">(</span>student_answers <span class="op">=</span> <span class="va">student_answers_wrong</span>, reference_answers <span class="op">=</span> <span class="va">.reference_answers</span>, maximum_grade<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/gradeR.html">gradeR</a></span><span class="op">(</span>student_answers <span class="op">=</span> <span class="va">student_answers_wrong</span>, reference_answers <span class="op">=</span> <span class="va">.reference_answers</span>, maximum_grade<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ❌ Question Q1 - Potentially incorrect</span></span>
 <span><span class="co">#&gt; ❌ Question Q2 - Potentially incorrect</span></span>
 <span><span class="co">#&gt; ❌ Question Q3 - Potentially incorrect</span></span>
@@ -126,7 +126,7 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;    ⌛ Auto-grade 0 %,  0 / 10 points</span></span>
-<span><span class="fu"><a href="../reference/dot-gradeR.html">.gradeR</a></span><span class="op">(</span>student_answers <span class="op">=</span> <span class="va">student_answers_right</span>, reference_answers <span class="op">=</span> <span class="va">.reference_answers</span>, maximum_grade<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/gradeR.html">gradeR</a></span><span class="op">(</span>student_answers <span class="op">=</span> <span class="va">student_answers_right</span>, reference_answers <span class="op">=</span> <span class="va">.reference_answers</span>, maximum_grade<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ✅ Question Q1 - Correct!</span></span>
 <span><span class="co">#&gt; ✅ Question Q2 - Correct!</span></span>
 <span><span class="co">#&gt; ✅ Question Q3 - Correct!</span></span>

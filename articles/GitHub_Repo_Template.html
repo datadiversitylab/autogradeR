@@ -22,7 +22,7 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">gradeR</a>
 
@@ -77,9 +77,10 @@
 <div class="section level2">
 <h2 id="homework-template">1. Homework template<a class="anchor" aria-label="anchor" href="#homework-template"></a>
 </h2>
-<p>To create a template of the HW using <code>gradeR</code>, use the <code><a href="../reference/homework_template.html">homework_template()</a></code> function. This function will create two folders in your current working directory. First, the <code>data</code> folder, where the instructor is expected to provide any external datasets to the student. Second, a <code>tests</code> folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.</p>
+<p>To create a template of the HW using <code>gradeR</code>, use the <code><a href="../reference/assignment.template.html">assignment.template()</a></code> function. This function will create two folders in a given directory, which is by default, your current working directory <code>.</code>. First, the <code>data</code> folder, where the instructor is expected to provide any external datasets to the student. Second, a <code>tests</code> folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/homework_template.html">homework_template</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">gradeR</span><span class="fu">::</span><span class="fu"><a href="../reference/assignment.template.html">assignment.template</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"HW1"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Files will be saved to a new directory: /home/runner/work/gradeR/gradeR/vignettes/HW1</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="modify-the-template">2. Modify the template<a class="anchor" aria-label="anchor" href="#modify-the-template"></a>
@@ -88,13 +89,37 @@
 <p>Unless you know what you are doing, <strong>NEVER</strong> modify the autograder section by hand. You can change anything before those lines. Final answers MUST be saved with the structure <code>QX =</code>, with <code>X</code> representing any number. Failing to follow that structure will cause the autograder to fail. Both the autograder section and the <code>QX =</code> structure in final answers are the only two aspects that should NOT be modified.</p>
 <p>You can render your <code>tests/1_answers_template.Rmd</code> file as many times as you need and troubleshoot with it until it renders appropriately and all the answers are shown as correct.</p>
 <p>Finally, note that a <code>README.rmd</code> file was created in the root of your working direct. The <code>README.rmd</code> should be used to present basic information to the students in the GitHub repo. Please make all the changes you need in the <code>README.rmd</code>. Do not modify lines of code below the autograder in the same file.</p>
+<p>Up to this point, the files in the repo are the following:</p>
+<pre><code><span><span class="co">#&gt; HW1</span></span>
+<span><span class="co">#&gt; ├── README.Rmd</span></span>
+<span><span class="co">#&gt; ├── data</span></span>
+<span><span class="co">#&gt; │   └── sample_dataset.csv</span></span>
+<span><span class="co">#&gt; └── tests</span></span>
+<span><span class="co">#&gt;     ├── 0_answers_template_original.Rmd</span></span>
+<span><span class="co">#&gt;     ├── 1_answers_template.Rmd</span></span>
+<span><span class="co">#&gt;     ├── 1_answers_template.html</span></span>
+<span><span class="co">#&gt;     └── reference_answers.RData</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="generate-the-students-markdown">3. Generate the student’s markdown<a class="anchor" aria-label="anchor" href="#generate-the-students-markdown"></a>
 </h2>
-<p>Once your HW template is ready, you’ll need to generate the relevant files for your students using the <code><a href="../reference/generate_student.html">generate_student()</a></code> function. This function will create a <code>0_Homework.Rmd</code> file, a blank template for your students to answer the questions. The autograder will be tested in a newly rendered <code>0_Homework.html</code> that was generated from <code>0_Homework.Rmd</code>. Finally, rendering the <code>0_Homework.Rmd</code> will always render the <code>README.Rmd</code>, which in turns create the <code>README.md</code> file.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_student.html">generate_student</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Once your HW template is ready, you’ll need to generate the relevant files for your students using the <code><a href="../reference/assignment.expand.html">assignment.expand()</a></code> function. This function will create a <code>0_Homework.Rmd</code> file, a blank template for your students to answer the questions. The autograder will be tested in a newly rendered <code>0_Homework.html</code> that was generated from <code>0_Homework.Rmd</code>. Finally, rendering the <code>0_Homework.Rmd</code> will always render the <code>README.Rmd</code>, which in turns create the <code>README.md</code> file.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">gradeR</span><span class="fu">::</span><span class="fu"><a href="../reference/assignment.expand.html">assignment.expand</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"HW1"</span><span class="op">)</span></span></code></pre></div>
+<p>The following are the files and folders that are created:</p>
+<pre><code><span><span class="co">#&gt; HW1</span></span>
+<span><span class="co">#&gt; ├── 0_Homework.Rmd</span></span>
+<span><span class="co">#&gt; ├── 0_Homework.html</span></span>
+<span><span class="co">#&gt; ├── README.Rmd</span></span>
+<span><span class="co">#&gt; ├── README.md</span></span>
+<span><span class="co">#&gt; ├── data</span></span>
+<span><span class="co">#&gt; │   └── sample_dataset.csv</span></span>
+<span><span class="co">#&gt; └── tests</span></span>
+<span><span class="co">#&gt;     ├── 0_answers_template_original.Rmd</span></span>
+<span><span class="co">#&gt;     ├── 1_answers_template.Rmd</span></span>
+<span><span class="co">#&gt;     ├── 1_answers_template.html</span></span>
+<span><span class="co">#&gt;     ├── reference_answers.RData</span></span>
+<span><span class="co">#&gt;     └── student_answers.RData</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="release-the-hw">4. Release the HW<a class="anchor" aria-label="anchor" href="#release-the-hw"></a>
@@ -105,13 +130,6 @@
 <h2 id="after-the-hw-is-due">5. After the HW is due<a class="anchor" aria-label="anchor" href="#after-the-hw-is-due"></a>
 </h2>
 <p>Clone the repositories using GitHub Classroom assistant.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'0_Homework.html'</span>,</span>
-<span><span class="st">'0_Homework.Rmd'</span>,</span>
-<span><span class="st">'data'</span>,</span>
-<span><span class="st">'README.md'</span>,</span>
-<span><span class="st">'README.Rmd'</span>,</span>
-<span><span class="st">'tests'</span><span class="op">)</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
