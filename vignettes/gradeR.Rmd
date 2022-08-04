@@ -2,7 +2,7 @@
 title: "Quick introduction to gradeR"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Intro to gradeR}
+  %\VignetteIndexEntry{Quick introduction to gradeR}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -56,12 +56,12 @@ The instructor created their own autograder to grade these questions.. The autog
 )
 ```
 
-Let's now grade the submissions:
+Let's now grade the submissions using `gradeR`:
 
 ```{r}
-.gradeR(student_answers = student_answers_no_answers, reference_answers = .reference_answers, maximum_grade=10)
-.gradeR(student_answers = student_answers_wrong, reference_answers = .reference_answers, maximum_grade=10)
-.gradeR(student_answers = student_answers_right, reference_answers = .reference_answers, maximum_grade=10)
+gradeR(student_answers = student_answers_no_answers, reference_answers = .reference_answers, maximum_grade=10)
+gradeR(student_answers = student_answers_wrong, reference_answers = .reference_answers, maximum_grade=10)
+gradeR(student_answers = student_answers_right, reference_answers = .reference_answers, maximum_grade=10)
 ```
 
 

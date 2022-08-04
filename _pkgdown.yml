@@ -1,4 +1,5 @@
 url: https://cromanpa94.github.io/gradeR/
 template:
   bootstrap: 5
+  bootswatch: yeti
 

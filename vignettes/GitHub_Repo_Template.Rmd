@@ -7,8 +7,9 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r libraries, include = FALSE}
 library(gradeR)
+library(fs)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -20,11 +21,18 @@ The `gradeR` is able to generate automatic templates for more complex assignment
 
 # 1. Homework template
 
-To create a template of the HW using `gradeR`, use the `homework_template()` function. This function will create two folders in your current working directory. First, the `data` folder, where the instructor is expected to provide any external datasets to the student. Second, a `tests` folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.
+To create a template of the HW using `gradeR`, use the `assignment.template()` function. This function will create two folders in a given directory, which is by default, your current working directory `.`. First, the `data` folder, where the instructor is expected to provide any external datasets to the student. Second, a `tests` folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.
 
-```{r eval=FALSE}
-homework_template()
+```{r create template}
+gradeR::assignment.template(path = "HW1")
 ```
+
+
+```{r double check it rendered, include=FALSE}
+#For some reason, rmarkdown::render sometimes doesn't work when its within a function and it's being called also using rmarkdown::render
+rmarkdown::render("HW1/tests/1_answers_template.Rmd")
+```
+
 
 # 2. Modify the template
 
@@ -36,14 +44,25 @@ You can render your `tests/1_answers_template.Rmd` file as many times as you nee
 
 Finally, note that a `README.rmd` file was created in the root of your working direct. The `README.rmd` should be used to present basic information to the students in the GitHub repo. Please make all the changes you need in the `README.rmd`. Do not modify lines of code below the autograder in the same file. 
 
-# 3. Generate the student's markdown
+Up to this point, the files in the repo are the following:
 
-Once your HW template is ready, you'll need to generate the relevant files for your students using the `generate_student()` function. This function will create a `0_Homework.Rmd` file, a blank template for your students to answer the questions. The autograder will be tested in a newly rendered `0_Homework.html` that was generated from `0_Homework.Rmd`. Finally, rendering the `0_Homework.Rmd` will always render the `README.Rmd`, which in turns create the `README.md` file.
-
-```{r eval=FALSE}
-generate_student()
+```{r tree directory 1, echo=FALSE}
+fs::dir_tree("HW1")
 ```
 
+# 3. Generate the student's markdown
+
+Once your HW template is ready, you'll need to generate the relevant files for your students using the `assignment.expand()` function. This function will create a `0_Homework.Rmd` file, a blank template for your students to answer the questions. The autograder will be tested in a newly rendered `0_Homework.html` that was generated from `0_Homework.Rmd`. Finally, rendering the `0_Homework.Rmd` will always render the `README.Rmd`, which in turns create the `README.md` file.
+
+```{r generate students side}
+gradeR::assignment.expand(path = "HW1")
+```
+
+The following are the files and folders that are created:
+
+```{r tree directory 2, echo=FALSE}
+fs::dir_tree("HW1")
+```
 
 
 # 4. Release the HW
@@ -55,13 +74,8 @@ Create a template repo in GitHub. Use GitHub classroom. Push only the relevant f
 
 Clone the repositories using GitHub Classroom assistant.
 
-```{r}
-unlink(c('0_Homework.html',
-'0_Homework.Rmd',
-'data',
-'README.md',
-'README.Rmd',
-'tests'), recursive = TRUE)
+```{r delete, include=FALSE}
+unlink("HW1", recursive = TRUE)
 ```
 
 

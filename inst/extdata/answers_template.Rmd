@@ -58,7 +58,6 @@ Q4 = "Test answer" #Replace with NULL
           Q4 = list(Q4, fun = function(x){!is.null(x)})                                      # Question 4
 )
 rm(list = ls())
-save.image('reference_answers.RData')
-Sys.sleep(1)
+save.image('reference_answers.RData', safe = TRUE)
 ```
 

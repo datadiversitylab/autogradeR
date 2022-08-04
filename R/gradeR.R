@@ -10,7 +10,7 @@
 #' @export
 #' 
 
-.gradeR <- function(student_answers, reference_answers, maximum_grade=10){
+gradeR <- function(student_answers, reference_answers, maximum_grade=10){
   
   report <- sapply(seq_along(student_answers), function(x){
     if ( is.null(student_answers[[x]])){
