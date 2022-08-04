@@ -6,6 +6,9 @@
 \usage{
 assignment.expand(path = ".")
 }
+\arguments{
+\item{path}{Where should the sample directory be exported to?}
+}
 \description{
 This function takes a pre-defined HW template and generates a full
 homework with an autograding system

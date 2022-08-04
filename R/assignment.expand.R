@@ -3,6 +3,8 @@
 #' This function takes a pre-defined HW template and generates a full
 #' homework with an autograding system
 #' 
+#' @param path Where should the sample directory be exported to? 
+#' 
 #' @importFrom rmarkdown render
 #' @importFrom digest digest
 #' 
