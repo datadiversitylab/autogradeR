@@ -5,6 +5,8 @@
   [![](https://img.shields.io/github/languages/code-size/cromanpa94/gradeR.svg)](https://github.com/cromanpa94/gradeR)
   [![CodeFactor](https://www.codefactor.io/repository/github/cromanpa94/gradeR/badge)](https://www.codefactor.io/repository/github/cromanpa94/gradeR)  <!-- badges: end -->
 
+[![CodeFactor](https://www.codefactor.io/repository/github/cromanpa94/grader/badge)](https://www.codefactor.io/repository/github/cromanpa94/grader)
+
 # The `gradeR` `R` package <a href='https://cromanpa94.github.io/gradeR'><img src='man/figures/logo.png' align="right" height="300" /></a>
 
 ### A package to simplify basic grading taks in `R`
@@ -22,18 +24,30 @@ library(devtools)
 install_github("cromanpa94/gradeR")
 ```
 
-#### Next steps
+### Assembling phylogenetic trees from taxonomic names.
 
-- [x] Function to create the sample repo
+## What is `gradeR`?
 
-- [x] Function to run the autograder in the readme and homework
+## Who should consider using `gradeR`
 
-- [x] Functions to generate correct solutions to questions 
+## Why use `gradeR`?
 
-- [ ] Compile grades and feedback 
-    - for a set of folders
-    - find feedback files
-    - read them and put it into a single string per student.
-    - list grades per student
-    
-- [ ] Push feedback to GitHub repos]
+## Alternatives to `gradeR`
+
+`ghclass`
+`ottr`
+`learnr`
+`gradethis`
+`gradeR`
+
+## Contributing
+
+Please see our [contributing guide](CONTRIBUTING).
+
+## Contact
+
+Please see the package [DESCRIPTION](DESCRIPTION) for package authors.
+
+## Future work
+
+- [ ] Implement a function to push feedback to GitHub repos (checkout `ghclass`)

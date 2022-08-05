@@ -1,9 +1,11 @@
 Package: gradeR
+Type: Package
 Title: A Basic Auto-Grader for Assignments in R
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: 
     person("Cristian", "Roman Palacios", , "cromanpa94@arizona.edu", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "0000-0003-1696-4886"))
+URL: https://github.com/cromanpa94/gradeR, https://cromanpa94.github.io/gradeR/
 Description: A basic autograder for assignments in R.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -14,8 +16,8 @@ Imports:
 Depends: 
     R (>= 2.10), 
     rmarkdown,
-    digest
-URL: https://cromanpa94.github.io/gradeR/
+    digest,
+    ghclass
 Suggests: 
     knitr,
     fs
