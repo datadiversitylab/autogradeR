@@ -28,16 +28,10 @@ install_github("cromanpa94/gradeR")
 
 ## What is `gradeR`?
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 265b38c7397fe6659abaa499e735ef47b75ef84c
 ## Who should consider using `gradeR`
 
 ## Why use `gradeR`?
 
-<<<<<<< HEAD
 ## Alternatives to `gradeR`
 
 `ghclass`
@@ -45,13 +39,12 @@ install_github("cromanpa94/gradeR")
 `learnr`
 `gradethis`
 `gradeR`
-=======
+
+
 ## Dedication
 
 
 ## Alternatives to `gradeR`
-
->>>>>>> 265b38c7397fe6659abaa499e735ef47b75ef84c
 
 ## Contributing
 
@@ -63,8 +56,4 @@ Please see the package [DESCRIPTION](DESCRIPTION) for package authors.
 
 ## Future work
 
-<<<<<<< HEAD
 - [ ] Implement a function to push feedback to GitHub repos (checkout `ghclass`)
-=======
-- [ ] Push feedback to GitHub repos
->>>>>>> 265b38c7397fe6659abaa499e735ef47b75ef84c
