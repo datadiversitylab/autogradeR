@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">gradeR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,14 @@
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/cromanpa94/gradeR/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -74,7 +81,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Creating an assignment with gradeR</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/cromanpa94/gradeR/blob/HEAD/vignettes/GitHub_Repo_Template.Rmd" class="external-link"><code>vignettes/GitHub_Repo_Template.Rmd</code></a></small>
       <div class="d-none name"><code>GitHub_Repo_Template.Rmd</code></div>
     </div>
 
@@ -131,12 +138,23 @@
 <div class="section level2">
 <h2 id="release-the-hw">4. Release the HW<a class="anchor" aria-label="anchor" href="#release-the-hw"></a>
 </h2>
-<p>Create a template repo in GitHub. Use GitHub classroom. Push only the relevant files (do NOT push the answers). I will talk more about how to encrypt R files later on.</p>
+<p>Create a template repo in GitHub. Use GitHub classroom. Push only the relevant files (do NOT push the answers). I will talk more about how to encrypt R files later on. You can also use <code>ghclass</code> but I find convenient to simply share the GitHub classroom link with my students (instead of creating the repos for them; but maybe I’m missing something).</p>
+<p>Personal trick: I create a single organization per class I teach. Each assignment has the assignment name plus an indication of when it was released (the term). For instance, <code>HW1</code> for my <code>INFO123</code> class taught in the Fall of 2022 would be part of the <code>INFO123</code> organization, with the assignment labeled as <code>Homework-1-F22</code> That way, I don’t have to worry about creating new organizations each term, students will have constant access to their assignments, and all the resources are hosted within the same “umbrella”.</p>
 </div>
 <div class="section level2">
-<h2 id="after-the-hw-is-due">5. After the HW is due<a class="anchor" aria-label="anchor" href="#after-the-hw-is-due"></a>
+<h2 id="collect-the-assignments">5. Collect the assignments<a class="anchor" aria-label="anchor" href="#collect-the-assignments"></a>
 </h2>
-<p>Clone the repositories using GitHub Classroom assistant.</p>
+<p>For collecting the assignments submitted to GitHub classroom, you have two options. You can either clone the repositories using GitHub Classroom assistant or use the <code>assignment.collect</code> function in <code>gradeR</code>, a wrapper for <code><a href="https://rdrr.io/pkg/ghclass/man/local_repo.html" class="external-link">ghclass:: local_repo_clone</a></code>. For instance, if you decide to use <code>gradeR</code> to clone the repos, you can use the following line of code.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/assignment.collect.html">assignment.collect</a></span><span class="op">(</span>organization <span class="op">=</span> <span class="st">"INFO123"</span>, GHpattern <span class="op">=</span> <span class="st">"homework-1-F22"</span>, path <span class="op">=</span> <span class="st">"HW1F22"</span><span class="op">)</span></span></code></pre></div>
+<p>Either of the options should work just fine. The goal is to have all the folders stored in a local folder (e.g. <code>HW1F22</code> in the example above).</p>
+</div>
+<div class="section level2">
+<h2 id="extract-grades-from-the-local-repos">6. Extract grades from the local repos<a class="anchor" aria-label="anchor" href="#extract-grades-from-the-local-repos"></a>
+</h2>
+<p>Once you have cloned all the repos locally, <code>gradeR</code> can help you extract the final grades from student’s submitted assignments. Grades are extracted from <code>README.md</code> files. If students fail to push this file, their grade will be <code>0</code>. Please encourage your students to push at least the <code>HWX.Rmd</code>, the associated <code>HTML</code> file, and the <code>README.md</code> file.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/assignment.grades.html">assignment.grades</a></span><span class="op">(</span>createPDFs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

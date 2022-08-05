@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">gradeR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,14 @@
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/cromanpa94/gradeR/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -67,6 +74,7 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><p><!-- badges: start --> <a href="https://codecov.io/gh/cromanpa94/gradeR?branch=main" class="external-link"><img src="https://codecov.io/gh/cromanpa94/gradeR/branch/main/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://github.com/cromanpa94/gradeR/actions" class="external-link"><img src="https://github.com/cromanpa94/gradeR/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg"></a><br><a href="https://github.com/cromanpa94/gradeR" class="external-link"><img src="https://img.shields.io/github/languages/code-size/cromanpa94/gradeR.svg"></a> <a href="https://www.codefactor.io/repository/github/cromanpa94/gradeR" class="external-link"><img src="https://www.codefactor.io/repository/github/cromanpa94/gradeR/badge" alt="CodeFactor"></a> <!-- badges: end --></p>
+<p><a href="https://www.codefactor.io/repository/github/cromanpa94/grader" class="external-link"><img src="https://www.codefactor.io/repository/github/cromanpa94/grader/badge" alt="CodeFactor"></a></p>
 <div class="section level1">
 <div class="page-header">
 <img src="logo.png" class="logo" alt=""><h1 id="the-grader-r-package-">The <code>gradeR</code> <code>R</code> package 
@@ -87,25 +95,36 @@
 <p>The <code>gradeR</code> R package can be installed from GitHub using the code presented below. I expect <code>gradeR</code> to be available on CRAN at some point in the future.</p>
 <pre><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
 <span><span class="fu">install_github</span><span class="op">(</span><span class="st">"cromanpa94/gradeR"</span><span class="op">)</span></span></code></pre>
-<div class="section level4">
-<h4 id="next-steps">Next steps<a class="anchor" aria-label="anchor" href="#next-steps"></a>
-</h4>
-<ul class="task-list">
-<li><p><input type="checkbox" disabled checked>Function to create the sample repo</p></li>
-<li><p><input type="checkbox" disabled checked>Function to run the autograder in the readme and homework</p></li>
-<li><p><input type="checkbox" disabled checked>Functions to generate correct solutions to questions</p></li>
-<li>
-<p><input type="checkbox" disabled>Compile grades and feedback</p>
-<ul>
-<li>for a set of folders</li>
-<li>find feedback files</li>
-<li>read them and put it into a single string per student.</li>
-<li>list grades per student</li>
-</ul>
-</li>
-<li><p><input type="checkbox" disabled>Push feedback to GitHub repos]</p></li>
-</ul>
+<div class="section level3"><h3 id="assembling-phylogenetic-trees-from-taxonomic-names">Assembling phylogenetic trees from taxonomic names.<a class="anchor" aria-label="anchor" href="#assembling-phylogenetic-trees-from-taxonomic-names"></a>
+</h3></div>
 </div>
+<div class="section level2"><h2 id="what-is-grader">What is <code>gradeR</code>?<a class="anchor" aria-label="anchor" href="#what-is-grader"></a>
+</h2></div>
+<div class="section level2"><h2 id="who-should-consider-using-grader">Who should consider using <code>gradeR</code>
+<a class="anchor" aria-label="anchor" href="#who-should-consider-using-grader"></a>
+</h2></div>
+<div class="section level2"><h2 id="why-use-grader">Why use <code>gradeR</code>?<a class="anchor" aria-label="anchor" href="#why-use-grader"></a>
+</h2></div>
+<div class="section level2"><h2 id="dedication">Dedication<a class="anchor" aria-label="anchor" href="#dedication"></a>
+</h2></div>
+<div class="section level2"><h2 id="alternatives-to-grader">Alternatives to <code>gradeR</code>
+<a class="anchor" aria-label="anchor" href="#alternatives-to-grader"></a>
+</h2></div>
+<div class="section level2">
+<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
+</h2>
+<p>Please see our <a href="CONTRIBUTING">contributing guide</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="contact">Contact<a class="anchor" aria-label="anchor" href="#contact"></a>
+</h2>
+<p>Please see the package <a href="DESCRIPTION">DESCRIPTION</a> for package authors.</p>
+</div>
+<div class="section level2">
+<h2 id="future-work">Future work<a class="anchor" aria-label="anchor" href="#future-work"></a>
+</h2>
+<ul class="task-list"><li>
+<input type="checkbox" disabled>Push feedback to GitHub repos</li></ul>
 </div>
 </div>
 
@@ -113,6 +132,7 @@
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://cloud.r-project.org/package=gradeR" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/cromanpa94/gradeR/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
 
@@ -135,7 +155,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Cristian Roman Palacios <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Cristian Roman Palacios <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-1696-4886" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
