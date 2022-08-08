@@ -33,13 +33,13 @@ assignment.expand <- function(path = "."){
   
   ##Remove sample autograder in the template
   toDel1 <- which(instructor_copy ==  "```{r Autograder}" )
-  toDel2 <- which(instructor_copy ==  "```{r gradeR}"  ) - 1
+  toDel2 <- which(instructor_copy ==  "```{r autogradeR}"  ) - 1
   toDel3 <- which(instructor_copy ==  "rm(list = ls())" )
   instructor_copy <- instructor_copy[-c(toDel1:toDel2, toDel3)]
   
   ##Add reference answers line
   AddDs <- c("load('tests/reference_answers.RData')")
-  toIns <- which(instructor_copy == "```{r gradeR}")
+  toIns <- which(instructor_copy == "```{r autogradeR}")
   instructor_copy <- sub("reference_answers.RData", "tests/student_answers.RData", instructor_copy)
   instructor_copy <- c(instructor_copy[c(1:toIns)], AddDs, instructor_copy[c((toIns+1):length(instructor_copy))]) 
   

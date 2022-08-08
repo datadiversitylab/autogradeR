@@ -77,7 +77,7 @@ Personal trick: I create a single organization per class I teach. Each assignmen
 For collecting the assignments submitted to GitHub classroom, you have two options. You can either clone the repositories using GitHub Classroom assistant or use the `assignment.collect` function in `autogradeR`, a wrapper for `ghclass:: local_repo_clone`. For instance, if you decide to use `autogradeR` to clone the repos, you can use the following line of code.
 
 ```{r collect assingments, eval = FALSE}
-assignment.collect(organization = "INFO123", GHpattern = "homework-1-F22", path = "HW1F22")
+autogradeR::assignment.collect(organization = "INFO123", GHpattern = "homework-1-F22", path = "HW1F22")
 ```
 
 Either of the options should work just fine. The goal is to have all the folders stored in a local folder (e.g. `HW1F22` in the example above).
@@ -87,7 +87,7 @@ Either of the options should work just fine. The goal is to have all the folders
 Once you have cloned all the repos locally, `autogradeR` can help you extract the final grades from student's submitted assignments. Grades are extracted from `README.md` files. If students fail to push this file, their grade will be `0`. Please encourage your students to push at least the `HWX.Rmd`, the associated `HTML` file, and the `README.md` file. 
 
 ```{r grades, eval = FALSE}
-assignment.grades(createPDFs = TRUE)
+aautogradeR::ssignment.grades(createPDFs = TRUE)
 ```
 
 
