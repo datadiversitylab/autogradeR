@@ -1,14 +1,14 @@
 ---
-title: "Creating an assignment with gradeR"
+title: "Creating an assignment with autogradeR"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Creating an assignment with gradeR}
+  %\VignetteIndexEntry{Creating an assignment with autogradeR}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r libraries, include = FALSE}
-library(gradeR)
+library(autogradeR)
 library(fs)
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -17,14 +17,14 @@ knitr::opts_chunk$set(
 ```
 
 
-The `gradeR` is able to generate automatic templates for more complex assignments. These templates are designed as GitHub repositories to be released using GitHub classroom. Now, let's asumme that you're interested in creating all the basic files that are needed for `gradeR` to work for you as an instructor and your students. Note that students will have access to the autograder at any time. However, answers will be either (1) encrypted and saved in a hidden object in the environment or (2) simply saved into a hidden object (also in the environment). Instructors can decide when to encrypt answers. 
+The `autogradeR` is able to generate automatic templates for more complex assignments. These templates are designed as GitHub repositories to be released using GitHub classroom. Now, let's asumme that you're interested in creating all the basic files that are needed for `autogradeR` to work for you as an instructor and your students. Note that students will have access to the autoautogradeR at any time. However, answers will be either (1) encrypted and saved in a hidden object in the environment or (2) simply saved into a hidden object (also in the environment). Instructors can decide when to encrypt answers. 
 
 # 1. Homework template
 
-To create a template of the HW using `gradeR`, use the `assignment.template()` function. This function will create two folders in a given directory, which is by default, your current working directory `.`. First, the `data` folder, where the instructor is expected to provide any external datasets to the student. Second, a `tests` folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.
+To create a template of the HW using `autogradeR`, use the `assignment.template()` function. This function will create two folders in a given directory, which is by default, your current working directory `.`. First, the `data` folder, where the instructor is expected to provide any external datasets to the student. Second, a `tests` folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.
 
 ```{r create template}
-gradeR::assignment.template(path = "HW1")
+autogradeR::assignment.template(path = "HW1")
 ```
 
 
@@ -36,13 +36,13 @@ rmarkdown::render("HW1/tests/1_answers_template.Rmd")
 
 # 2. Modify the template
 
-Now, it's time for the instructor to make changes to the `tests/1_answers_template.Rmd` file. Note that `gradeR` has already rendered the same file into `1_answers_template.html`. The `tests/1_answers_template.Rmd`, which should be modified by the instructor, is expected to contain all the correct answers for each of the questions in the HW. The `tests/0_answers_template_original.Rmd` file should NEVER be modified and is used as a reference to the instructor. 
+Now, it's time for the instructor to make changes to the `tests/1_answers_template.Rmd` file. Note that `autogradeR` has already rendered the same file into `1_answers_template.html`. The `tests/1_answers_template.Rmd`, which should be modified by the instructor, is expected to contain all the correct answers for each of the questions in the HW. The `tests/0_answers_template_original.Rmd` file should NEVER be modified and is used as a reference to the instructor. 
 
-Unless you know what you are doing, **NEVER** modify the autograder section by hand. You can change anything before those lines. Final answers MUST be saved with the structure `QX = `, with `X` representing any number. Failing to follow that structure will cause the autograder to fail. Both the autograder section and the `QX = ` structure in final answers are the only two aspects that should NOT be modified.
+Unless you know what you are doing, **NEVER** modify the autoautogradeR section by hand. You can change anything before those lines. Final answers MUST be saved with the structure `QX = `, with `X` representing any number. Failing to follow that structure will cause the autoautogradeR to fail. Both the autoautogradeR section and the `QX = ` structure in final answers are the only two aspects that should NOT be modified.
 
 You can render your `tests/1_answers_template.Rmd` file as many times as you need and troubleshoot with it until it renders appropriately and all the answers are shown as correct. 
 
-Finally, note that a `README.rmd` file was created in the root of your working direct. The `README.rmd` should be used to present basic information to the students in the GitHub repo. Please make all the changes you need in the `README.rmd`. Do not modify lines of code below the autograder in the same file. 
+Finally, note that a `README.rmd` file was created in the root of your working direct. The `README.rmd` should be used to present basic information to the students in the GitHub repo. Please make all the changes you need in the `README.rmd`. Do not modify lines of code below the autoautogradeR in the same file. 
 
 Up to this point, the files in the repo are the following:
 
@@ -52,10 +52,10 @@ fs::dir_tree("HW1")
 
 # 3. Generate the student's markdown
 
-Once your HW template is ready, you'll need to generate the relevant files for your students using the `assignment.expand()` function. This function will create a `0_Homework.Rmd` file, a blank template for your students to answer the questions. The autograder will be tested in a newly rendered `0_Homework.html` that was generated from `0_Homework.Rmd`. Finally, rendering the `0_Homework.Rmd` will always render the `README.Rmd`, which in turns create the `README.md` file.
+Once your HW template is ready, you'll need to generate the relevant files for your students using the `assignment.expand()` function. This function will create a `0_Homework.Rmd` file, a blank template for your students to answer the questions. The autoautogradeR will be tested in a newly rendered `0_Homework.html` that was generated from `0_Homework.Rmd`. Finally, rendering the `0_Homework.Rmd` will always render the `README.Rmd`, which in turns create the `README.md` file.
 
 ```{r generate students side}
-gradeR::assignment.expand(path = "HW1")
+autogradeR::assignment.expand(path = "HW1")
 ```
 
 The following are the files and folders that are created:
@@ -74,7 +74,7 @@ Personal trick: I create a single organization per class I teach. Each assignmen
 
 # 5. Collect the assignments
 
-For collecting the assignments submitted to GitHub classroom, you have two options. You can either clone the repositories using GitHub Classroom assistant or use the `assignment.collect` function in `gradeR`, a wrapper for `ghclass:: local_repo_clone`. For instance, if you decide to use `gradeR` to clone the repos, you can use the following line of code.
+For collecting the assignments submitted to GitHub classroom, you have two options. You can either clone the repositories using GitHub Classroom assistant or use the `assignment.collect` function in `autogradeR`, a wrapper for `ghclass:: local_repo_clone`. For instance, if you decide to use `autogradeR` to clone the repos, you can use the following line of code.
 
 ```{r collect assingments, eval = FALSE}
 assignment.collect(organization = "INFO123", GHpattern = "homework-1-F22", path = "HW1F22")
@@ -84,7 +84,7 @@ Either of the options should work just fine. The goal is to have all the folders
 
 # 6. Extract grades from the local repos
 
-Once you have cloned all the repos locally, `gradeR` can help you extract the final grades from student's submitted assignments. Grades are extracted from `README.md` files. If students fail to push this file, their grade will be `0`. Please encourage your students to push at least the `HWX.Rmd`, the associated `HTML` file, and the `README.md` file. 
+Once you have cloned all the repos locally, `autogradeR` can help you extract the final grades from student's submitted assignments. Grades are extracted from `README.md` files. If students fail to push this file, their grade will be `0`. Please encourage your students to push at least the `HWX.Rmd`, the associated `HTML` file, and the `README.md` file. 
 
 ```{r grades, eval = FALSE}
 assignment.grades(createPDFs = TRUE)

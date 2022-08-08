@@ -1,14 +1,14 @@
 ---
-title: "Quick introduction to gradeR"
+title: "Quick introduction to autogradeR"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Quick introduction to gradeR}
+  %\VignetteIndexEntry{Quick introduction to autogradeR}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}
-library(gradeR)
+library(autogradeR)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -45,7 +45,7 @@ Q3 = data.frame(X=1:5, A = rnorm(5), b = rnorm(5))
 Q4 = 'test'
 ```
 
-The instructor created their own autograder to grade these questions.. The autograder is a list of lists. The first level of the list will have as many elements as questions to grade. Each nested list contains only two elements. The first element is the correct answer. The second is the function that is used to transform the student's answer into a compatible answer.
+The instructor created their own autoautogradeR to grade these questions.. The autoautogradeR is a list of lists. The first level of the list will have as many elements as questions to grade. Each nested list contains only two elements. The first element is the correct answer. The second is the function that is used to transform the student's answer into a compatible answer.
 
 ```{r}
 .reference_answers <- list(
@@ -56,7 +56,7 @@ The instructor created their own autograder to grade these questions.. The autog
 )
 ```
 
-Let's now grade the submissions using `gradeR`:
+Let's now grade the submissions using `autogradeR`:
 
 ```{r}
 gradeR(student_answers = student_answers_no_answers, reference_answers = .reference_answers, maximum_grade=10)
