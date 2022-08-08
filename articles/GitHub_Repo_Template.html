@@ -146,7 +146,7 @@
 </h2>
 <p>For collecting the assignments submitted to GitHub classroom, you have two options. You can either clone the repositories using GitHub Classroom assistant or use the <code>assignment.collect</code> function in <code>autogradeR</code>, a wrapper for <code><a href="https://rdrr.io/pkg/ghclass/man/local_repo.html" class="external-link">ghclass:: local_repo_clone</a></code>. For instance, if you decide to use <code>autogradeR</code> to clone the repos, you can use the following line of code.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/assignment.collect.html">assignment.collect</a></span><span class="op">(</span>organization <span class="op">=</span> <span class="st">"INFO123"</span>, GHpattern <span class="op">=</span> <span class="st">"homework-1-F22"</span>, path <span class="op">=</span> <span class="st">"HW1F22"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">autogradeR</span><span class="fu">::</span><span class="fu"><a href="../reference/assignment.collect.html">assignment.collect</a></span><span class="op">(</span>organization <span class="op">=</span> <span class="st">"INFO123"</span>, GHpattern <span class="op">=</span> <span class="st">"homework-1-F22"</span>, path <span class="op">=</span> <span class="st">"HW1F22"</span><span class="op">)</span></span></code></pre></div>
 <p>Either of the options should work just fine. The goal is to have all the folders stored in a local folder (e.g. <code>HW1F22</code> in the example above).</p>
 </div>
 <div class="section level2">
@@ -154,7 +154,7 @@
 </h2>
 <p>Once you have cloned all the repos locally, <code>autogradeR</code> can help you extract the final grades from student’s submitted assignments. Grades are extracted from <code>README.md</code> files. If students fail to push this file, their grade will be <code>0</code>. Please encourage your students to push at least the <code>HWX.Rmd</code>, the associated <code>HTML</code> file, and the <code>README.md</code> file.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/assignment.grades.html">assignment.grades</a></span><span class="op">(</span>createPDFs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">aautogradeR</span><span class="fu">::</span><span class="fu">ssignment.grades</span><span class="op">(</span>createPDFs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
