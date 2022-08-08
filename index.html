@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="A basic autograder for assignments in R.">
-<title>A Basic Auto-Grader for Assignments in R • gradeR</title>
+<title>A Basic Autograder for Assignments in R • autogradeR</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="A Basic Auto-Grader for Assignments in R">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="A Basic Autograder for Assignments in R">
 <meta property="og:description" content="A basic autograder for assignments in R.">
 <meta property="og:image" content="https://cromanpa94.github.io/gradeR/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -31,7 +31,7 @@
 
     <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
-    <a class="navbar-brand me-2" href="index.html">gradeR</a>
+    <a class="navbar-brand me-2" href="index.html">autogradeR</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
@@ -43,7 +43,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item">
-  <a class="nav-link" href="articles/gradeR.html">Get started</a>
+  <a class="nav-link" href="articles/autogradeR.html">Get started</a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
@@ -51,7 +51,7 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/GitHub_Repo_Template.html">Creating an assignment with gradeR</a>
+    <a class="dropdown-item" href="articles/GitHub_Repo_Template.html">Creating an assignment with autogradeR</a>
   </div>
 </li>
       </ul>
@@ -61,7 +61,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/cromanpa94/gradeR/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/cromanpa94/autogradeR/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -73,48 +73,48 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><p><!-- badges: start --> <a href="https://codecov.io/gh/cromanpa94/gradeR?branch=main" class="external-link"><img src="https://codecov.io/gh/cromanpa94/gradeR/branch/main/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://github.com/cromanpa94/gradeR/actions" class="external-link"><img src="https://github.com/cromanpa94/gradeR/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg"></a><br><a href="https://github.com/cromanpa94/gradeR" class="external-link"><img src="https://img.shields.io/github/languages/code-size/cromanpa94/gradeR.svg"></a> <a href="https://www.codefactor.io/repository/github/cromanpa94/gradeR" class="external-link"><img src="https://www.codefactor.io/repository/github/cromanpa94/gradeR/badge" alt="CodeFactor"></a> <!-- badges: end --></p>
-<p><a href="https://www.codefactor.io/repository/github/cromanpa94/grader" class="external-link"><img src="https://www.codefactor.io/repository/github/cromanpa94/grader/badge" alt="CodeFactor"></a></p>
+  <main id="main" class="col-md-9"><p><!-- badges: start --> <a href="https://codecov.io/gh/cromanpa94/autogradeR?branch=main" class="external-link"><img src="https://codecov.io/gh/cromanpa94/autogradeR/branch/main/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://github.com/cromanpa94/autogradeR/actions" class="external-link"><img src="https://github.com/cromanpa94/autogradeR/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg"></a><br><a href="https://github.com/cromanpa94/autogradeR" class="external-link"><img src="https://img.shields.io/github/languages/code-size/cromanpa94/autogradeR.svg"></a> <a href="https://www.codefactor.io/repository/github/cromanpa94/autogradeR" class="external-link"><img src="https://www.codefactor.io/repository/github/cromanpa94/autogradeR/badge" alt="CodeFactor"></a> <!-- badges: end --></p>
+<p><a href="https://www.codefactor.io/repository/github/cromanpa94/autogradeR" class="external-link"><img src="https://www.codefactor.io/repository/github/cromanpa94/autogradeR/badge" alt="CodeFactor"></a></p>
 <div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="the-grader-r-package-">The <code>gradeR</code> <code>R</code> package 
-<a class="anchor" aria-label="anchor" href="#the-grader-r-package-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="the-autograder-r-package-">The <code>autogradeR</code> <code>R</code> package 
+<a class="anchor" aria-label="anchor" href="#the-autograder-r-package-"></a>
 </h1>
 </div>
 <div class="section level3">
 <h3 id="a-package-to-simplify-basic-grading-taks-in-r">A package to simplify basic grading taks in <code>R</code>
 <a class="anchor" aria-label="anchor" href="#a-package-to-simplify-basic-grading-taks-in-r"></a>
 </h3>
-<p><code>gradeR</code> is expected to help instructors grade pre-defined assignments using a particular and relatively simple set of functions.</p>
+<p><code>autogradeR</code> is expected to help instructors grade pre-defined assignments using a particular and relatively simple set of functions.</p>
 <hr>
 </div>
 <div class="section level2">
-<h2 id="installing-grader">Installing <code>gradeR</code>
-<a class="anchor" aria-label="anchor" href="#installing-grader"></a>
+<h2 id="installing-autograder">Installing <code>autogradeR</code>
+<a class="anchor" aria-label="anchor" href="#installing-autograder"></a>
 </h2>
-<p>The <code>gradeR</code> R package can be installed from GitHub using the code presented below. I expect <code>gradeR</code> to be available on CRAN at some point in the future.</p>
+<p>The <code>autogradeR</code> R package can be installed from GitHub using the code presented below. I expect <code>autogradeR</code> to be available on CRAN at some point in the future.</p>
 <pre><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
-<span><span class="fu">install_github</span><span class="op">(</span><span class="st">"cromanpa94/gradeR"</span><span class="op">)</span></span></code></pre>
+<span><span class="fu">install_github</span><span class="op">(</span><span class="st">"cromanpa94/autogradeR"</span><span class="op">)</span></span></code></pre>
 <div class="section level3"><h3 id="assembling-phylogenetic-trees-from-taxonomic-names">Assembling phylogenetic trees from taxonomic names.<a class="anchor" aria-label="anchor" href="#assembling-phylogenetic-trees-from-taxonomic-names"></a>
 </h3></div>
 </div>
-<div class="section level2"><h2 id="what-is-grader">What is <code>gradeR</code>?<a class="anchor" aria-label="anchor" href="#what-is-grader"></a>
+<div class="section level2"><h2 id="what-is-autograder">What is <code>autogradeR</code>?<a class="anchor" aria-label="anchor" href="#what-is-autograder"></a>
 </h2></div>
-<div class="section level2"><h2 id="who-should-consider-using-grader">Who should consider using <code>gradeR</code>
-<a class="anchor" aria-label="anchor" href="#who-should-consider-using-grader"></a>
+<div class="section level2"><h2 id="who-should-consider-using-autograder">Who should consider using <code>autogradeR</code>
+<a class="anchor" aria-label="anchor" href="#who-should-consider-using-autograder"></a>
 </h2></div>
-<div class="section level2"><h2 id="why-use-grader">Why use <code>gradeR</code>?<a class="anchor" aria-label="anchor" href="#why-use-grader"></a>
+<div class="section level2"><h2 id="why-use-autograder">Why use <code>autogradeR</code>?<a class="anchor" aria-label="anchor" href="#why-use-autograder"></a>
 </h2></div>
 <div class="section level2">
-<h2 id="alternatives-to-grader">Alternatives to <code>gradeR</code>
-<a class="anchor" aria-label="anchor" href="#alternatives-to-grader"></a>
+<h2 id="alternatives-to-autograder">Alternatives to <code>autogradeR</code>
+<a class="anchor" aria-label="anchor" href="#alternatives-to-autograder"></a>
 </h2>
-<p><code>ghclass</code> <code>ottr</code> <code>learnr</code> <code>gradethis</code> <code>gradeR</code></p>
+<p><code>ghclass</code> <code>ottr</code> <code>learnr</code> <code>gradethis</code> <code>autogradeR</code></p>
 </div>
 <div class="section level2"><h2 id="dedication">Dedication<a class="anchor" aria-label="anchor" href="#dedication"></a>
 </h2></div>
-<div class="section level2"><h2 id="alternatives-to-grader-1">Alternatives to <code>gradeR</code>
-<a class="anchor" aria-label="anchor" href="#alternatives-to-grader-1"></a>
+<div class="section level2"><h2 id="alternatives-to-autograder-1">Alternatives to <code>autogradeR</code>
+<a class="anchor" aria-label="anchor" href="#alternatives-to-autograder-1"></a>
 </h2></div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
@@ -137,8 +137,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://cloud.r-project.org/package=gradeR" class="external-link">View on CRAN</a></li>
-<li><a href="https://github.com/cromanpa94/gradeR/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/cromanpa94/autogradeR/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
 
@@ -154,7 +153,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing gradeR</a></li>
+<li><a href="authors.html#citation">Citing autogradeR</a></li>
 </ul>
 </div>
 

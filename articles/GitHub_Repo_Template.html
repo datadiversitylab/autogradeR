@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="gradeR">
-<title>Creating an assignment with gradeR • gradeR</title>
+<meta name="description" content="autogradeR">
+<title>Creating an assignment with autogradeR • autogradeR</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -17,8 +17,8 @@
 <link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Creating an assignment with gradeR">
-<meta property="og:description" content="gradeR">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Creating an assignment with autogradeR">
+<meta property="og:description" content="autogradeR">
 <meta property="og:image" content="https://cromanpa94.github.io/gradeR/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -31,7 +31,7 @@
 
     <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
-    <a class="navbar-brand me-2" href="../index.html">gradeR</a>
+    <a class="navbar-brand me-2" href="../index.html">autogradeR</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
@@ -43,7 +43,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item">
-  <a class="nav-link" href="../articles/gradeR.html">Get started</a>
+  <a class="nav-link" href="../articles/autogradeR.html">Get started</a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
@@ -51,7 +51,7 @@
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/GitHub_Repo_Template.html">Creating an assignment with gradeR</a>
+    <a class="dropdown-item" href="../articles/GitHub_Repo_Template.html">Creating an assignment with autogradeR</a>
   </div>
 </li>
       </ul>
@@ -61,7 +61,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/cromanpa94/gradeR/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/cromanpa94/autogradeR/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -78,31 +78,31 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Creating an assignment with gradeR</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Creating an assignment with autogradeR</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/cromanpa94/gradeR/blob/HEAD/vignettes/GitHub_Repo_Template.Rmd" class="external-link"><code>vignettes/GitHub_Repo_Template.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/cromanpa94/autogradeR/blob/HEAD/vignettes/GitHub_Repo_Template.Rmd" class="external-link"><code>vignettes/GitHub_Repo_Template.Rmd</code></a></small>
       <div class="d-none name"><code>GitHub_Repo_Template.Rmd</code></div>
     </div>
 
     
     
-<p>The <code>gradeR</code> is able to generate automatic templates for more complex assignments. These templates are designed as GitHub repositories to be released using GitHub classroom. Now, let’s asumme that you’re interested in creating all the basic files that are needed for <code>gradeR</code> to work for you as an instructor and your students. Note that students will have access to the autograder at any time. However, answers will be either (1) encrypted and saved in a hidden object in the environment or (2) simply saved into a hidden object (also in the environment). Instructors can decide when to encrypt answers.</p>
+<p>The <code>autogradeR</code> is able to generate automatic templates for more complex assignments. These templates are designed as GitHub repositories to be released using GitHub classroom. Now, let’s asumme that you’re interested in creating all the basic files that are needed for <code>autogradeR</code> to work for you as an instructor and your students. Note that students will have access to the autoautogradeR at any time. However, answers will be either (1) encrypted and saved in a hidden object in the environment or (2) simply saved into a hidden object (also in the environment). Instructors can decide when to encrypt answers.</p>
 <div class="section level2">
 <h2 id="homework-template">1. Homework template<a class="anchor" aria-label="anchor" href="#homework-template"></a>
 </h2>
-<p>To create a template of the HW using <code>gradeR</code>, use the <code><a href="../reference/assignment.template.html">assignment.template()</a></code> function. This function will create two folders in a given directory, which is by default, your current working directory <code>.</code>. First, the <code>data</code> folder, where the instructor is expected to provide any external datasets to the student. Second, a <code>tests</code> folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.</p>
+<p>To create a template of the HW using <code>autogradeR</code>, use the <code><a href="../reference/assignment.template.html">assignment.template()</a></code> function. This function will create two folders in a given directory, which is by default, your current working directory <code>.</code>. First, the <code>data</code> folder, where the instructor is expected to provide any external datasets to the student. Second, a <code>tests</code> folder, where the instructor is going to (1) develop their Homework, and (2) store correct answers.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">gradeR</span><span class="fu">::</span><span class="fu"><a href="../reference/assignment.template.html">assignment.template</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"HW1"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Files will be saved to a new directory: /home/runner/work/gradeR/gradeR/vignettes/HW1</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">autogradeR</span><span class="fu">::</span><span class="fu"><a href="../reference/assignment.template.html">assignment.template</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"HW1"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Files will be saved to a new directory: /home/runner/work/autogradeR/autogradeR/vignettes/HW1</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="modify-the-template">2. Modify the template<a class="anchor" aria-label="anchor" href="#modify-the-template"></a>
 </h2>
-<p>Now, it’s time for the instructor to make changes to the <code>tests/1_answers_template.Rmd</code> file. Note that <code>gradeR</code> has already rendered the same file into <code>1_answers_template.html</code>. The <code>tests/1_answers_template.Rmd</code>, which should be modified by the instructor, is expected to contain all the correct answers for each of the questions in the HW. The <code>tests/0_answers_template_original.Rmd</code> file should NEVER be modified and is used as a reference to the instructor.</p>
-<p>Unless you know what you are doing, <strong>NEVER</strong> modify the autograder section by hand. You can change anything before those lines. Final answers MUST be saved with the structure <code>QX =</code>, with <code>X</code> representing any number. Failing to follow that structure will cause the autograder to fail. Both the autograder section and the <code>QX =</code> structure in final answers are the only two aspects that should NOT be modified.</p>
+<p>Now, it’s time for the instructor to make changes to the <code>tests/1_answers_template.Rmd</code> file. Note that <code>autogradeR</code> has already rendered the same file into <code>1_answers_template.html</code>. The <code>tests/1_answers_template.Rmd</code>, which should be modified by the instructor, is expected to contain all the correct answers for each of the questions in the HW. The <code>tests/0_answers_template_original.Rmd</code> file should NEVER be modified and is used as a reference to the instructor.</p>
+<p>Unless you know what you are doing, <strong>NEVER</strong> modify the autoautogradeR section by hand. You can change anything before those lines. Final answers MUST be saved with the structure <code>QX =</code>, with <code>X</code> representing any number. Failing to follow that structure will cause the autoautogradeR to fail. Both the autoautogradeR section and the <code>QX =</code> structure in final answers are the only two aspects that should NOT be modified.</p>
 <p>You can render your <code>tests/1_answers_template.Rmd</code> file as many times as you need and troubleshoot with it until it renders appropriately and all the answers are shown as correct.</p>
-<p>Finally, note that a <code>README.rmd</code> file was created in the root of your working direct. The <code>README.rmd</code> should be used to present basic information to the students in the GitHub repo. Please make all the changes you need in the <code>README.rmd</code>. Do not modify lines of code below the autograder in the same file.</p>
+<p>Finally, note that a <code>README.rmd</code> file was created in the root of your working direct. The <code>README.rmd</code> should be used to present basic information to the students in the GitHub repo. Please make all the changes you need in the <code>README.rmd</code>. Do not modify lines of code below the autoautogradeR in the same file.</p>
 <p>Up to this point, the files in the repo are the following:</p>
 <pre><code><span><span class="co">#&gt; HW1</span></span>
 <span><span class="co">#&gt; ├── README.Rmd</span></span>
@@ -117,9 +117,9 @@
 <div class="section level2">
 <h2 id="generate-the-students-markdown">3. Generate the student’s markdown<a class="anchor" aria-label="anchor" href="#generate-the-students-markdown"></a>
 </h2>
-<p>Once your HW template is ready, you’ll need to generate the relevant files for your students using the <code><a href="../reference/assignment.expand.html">assignment.expand()</a></code> function. This function will create a <code>0_Homework.Rmd</code> file, a blank template for your students to answer the questions. The autograder will be tested in a newly rendered <code>0_Homework.html</code> that was generated from <code>0_Homework.Rmd</code>. Finally, rendering the <code>0_Homework.Rmd</code> will always render the <code>README.Rmd</code>, which in turns create the <code>README.md</code> file.</p>
+<p>Once your HW template is ready, you’ll need to generate the relevant files for your students using the <code><a href="../reference/assignment.expand.html">assignment.expand()</a></code> function. This function will create a <code>0_Homework.Rmd</code> file, a blank template for your students to answer the questions. The autoautogradeR will be tested in a newly rendered <code>0_Homework.html</code> that was generated from <code>0_Homework.Rmd</code>. Finally, rendering the <code>0_Homework.Rmd</code> will always render the <code>README.Rmd</code>, which in turns create the <code>README.md</code> file.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">gradeR</span><span class="fu">::</span><span class="fu"><a href="../reference/assignment.expand.html">assignment.expand</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"HW1"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">autogradeR</span><span class="fu">::</span><span class="fu"><a href="../reference/assignment.expand.html">assignment.expand</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"HW1"</span><span class="op">)</span></span></code></pre></div>
 <p>The following are the files and folders that are created:</p>
 <pre><code><span><span class="co">#&gt; HW1</span></span>
 <span><span class="co">#&gt; ├── 0_Homework.Rmd</span></span>
@@ -144,7 +144,7 @@
 <div class="section level2">
 <h2 id="collect-the-assignments">5. Collect the assignments<a class="anchor" aria-label="anchor" href="#collect-the-assignments"></a>
 </h2>
-<p>For collecting the assignments submitted to GitHub classroom, you have two options. You can either clone the repositories using GitHub Classroom assistant or use the <code>assignment.collect</code> function in <code>gradeR</code>, a wrapper for <code><a href="https://rdrr.io/pkg/ghclass/man/local_repo.html" class="external-link">ghclass:: local_repo_clone</a></code>. For instance, if you decide to use <code>gradeR</code> to clone the repos, you can use the following line of code.</p>
+<p>For collecting the assignments submitted to GitHub classroom, you have two options. You can either clone the repositories using GitHub Classroom assistant or use the <code>assignment.collect</code> function in <code>autogradeR</code>, a wrapper for <code><a href="https://rdrr.io/pkg/ghclass/man/local_repo.html" class="external-link">ghclass:: local_repo_clone</a></code>. For instance, if you decide to use <code>autogradeR</code> to clone the repos, you can use the following line of code.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/assignment.collect.html">assignment.collect</a></span><span class="op">(</span>organization <span class="op">=</span> <span class="st">"INFO123"</span>, GHpattern <span class="op">=</span> <span class="st">"homework-1-F22"</span>, path <span class="op">=</span> <span class="st">"HW1F22"</span><span class="op">)</span></span></code></pre></div>
 <p>Either of the options should work just fine. The goal is to have all the folders stored in a local folder (e.g. <code>HW1F22</code> in the example above).</p>
@@ -152,7 +152,7 @@
 <div class="section level2">
 <h2 id="extract-grades-from-the-local-repos">6. Extract grades from the local repos<a class="anchor" aria-label="anchor" href="#extract-grades-from-the-local-repos"></a>
 </h2>
-<p>Once you have cloned all the repos locally, <code>gradeR</code> can help you extract the final grades from student’s submitted assignments. Grades are extracted from <code>README.md</code> files. If students fail to push this file, their grade will be <code>0</code>. Please encourage your students to push at least the <code>HWX.Rmd</code>, the associated <code>HTML</code> file, and the <code>README.md</code> file.</p>
+<p>Once you have cloned all the repos locally, <code>autogradeR</code> can help you extract the final grades from student’s submitted assignments. Grades are extracted from <code>README.md</code> files. If students fail to push this file, their grade will be <code>0</code>. Please encourage your students to push at least the <code>HWX.Rmd</code>, the associated <code>HTML</code> file, and the <code>README.md</code> file.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/assignment.grades.html">assignment.grades</a></span><span class="op">(</span>createPDFs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
