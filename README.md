@@ -40,12 +40,6 @@ install_github("cromanpa94/autogradeR")
 `gradethis`
 `autogradeR`
 
-
-## Dedication
-
-
-## Alternatives to `autogradeR`
-
 ## Contributing
 
 Please see our [contributing guide](CONTRIBUTING).

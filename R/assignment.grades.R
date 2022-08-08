@@ -43,6 +43,6 @@ assignment.grades <- function(createPDFs = TRUE){
   }))
   
   ##Export grades
-  write.csv(grades, "0_grades.csv")
+  utils::write.csv(grades, "0_grades.csv")
   
 }

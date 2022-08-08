@@ -1,4 +1,4 @@
-^gradeR\.Rproj$
+^autogradeR\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
 ^LICENSE\.md$
@@ -6,3 +6,5 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^CONTRIBUTING
+
