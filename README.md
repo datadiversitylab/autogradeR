@@ -5,8 +5,6 @@
   [![](https://img.shields.io/github/languages/code-size/cromanpa94/autogradeR.svg)](https://github.com/cromanpa94/autogradeR)
   [![CodeFactor](https://www.codefactor.io/repository/github/cromanpa94/autogradeR/badge)](https://www.codefactor.io/repository/github/cromanpa94/autogradeR)  <!-- badges: end -->
 
-[![CodeFactor](https://www.codefactor.io/repository/github/cromanpa94/autogradeR/badge)](https://www.codefactor.io/repository/github/cromanpa94/autogradeR)
-
 # The `autogradeR` `R` package <a href='https://cromanpa94.github.io/autogradeR'><img src='man/figures/logo.png' align="right" height="300" /></a>
 
 ### A package to simplify basic grading taks in `R`
